@@ -1,1 +1,1 @@
-> python script for import data from kaggle to colab notebook
+> python scripts for import data from kaggle or drive to colab notebook
