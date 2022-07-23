@@ -11,7 +11,7 @@ def import_data_from_kaggle(url_dataset, OUTPUT_FOLDER="./dataset/", unzip=True)
   # upload APi-key json file download it from your profile from kaggle
   if not os.path.isfile('kaggle.json'):
     print("[+] Upload 'Kaggle.json' api for credentials")
-    print("[*] You can download it from kaggle profile account\n\n")
+    print(f"[*] You can download it from kaggle profile account 'https://www.kaggle.com/{input('username of kaggle')}/account'\n\n")
     files.upload()
   else:
     print('file already exist')
