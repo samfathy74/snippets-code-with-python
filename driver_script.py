@@ -1,5 +1,5 @@
 import gdown
-def download_from_drive(id, output_path='./output/', folder=False):
+def download_from_drive(id, output_path='./', folder=False, folder_limited=False):
   """
   id String: is a unique id for every file and folder is a part of drive link is example(https://drive.google.com/uc?id={{'1FxvmwTrYZsMyCMfH_mcrLJ2oStXABQG_'}})
   output_path='./output/' String: is output path of downloaded files,
@@ -18,4 +18,10 @@ def download_from_drive(id, output_path='./output/', folder=False):
       print("extract files...")
       gdown.extractall(path=downloaded_file, to=output_path)
   else:
-    gdown.download_folder(id=id, output=output_path)
+    if folder_limited:
+      '''if u have a problem with folder_limited you should run this command external'''
+      out = os.system(f"gdown --remaining-ok -q --folder -O {output_path} --id {id} ")
+      if out>0:
+        print("download completed")
+    else:
+      gdown.download_folder(id=id, output=output_path, remaining_ok=True)  
