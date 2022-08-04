@@ -1,3 +1,10 @@
+import os
+os.system("pip install arabic_reshaper")
+os.system("git clone https://github.com/gasharper/linux-fonts.git")
+fontpath="./linux-fonts/arial.ttf"
+import arabic_reshaper
+from PIL import ImageFont, ImageDraw, Image
+
 def check_model(test_data:np, test_labels:np, model):
   images = []
 
