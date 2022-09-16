@@ -2,6 +2,7 @@
 import os
 from google.colab import files
 
+
 def import_data_from_kaggle(url_dataset, OUTPUT_FOLDER="./dataset/", unzip=True):
   """
   url_dataset String : dataset url from kaggle for example ('https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data')
